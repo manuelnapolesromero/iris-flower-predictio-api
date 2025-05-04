@@ -25,3 +25,4 @@ iris-flower-prediction-api/
 
 └── requirements.txt # Lista de dependencias de Python
 
+<img src="blob:chrome-untrusted://media-app/cc818e29-8865-4427-ac8f-7941d206d7e2" alt="Screenshot 2025-05-04 11.48.28.png"/>![image](https://github.com/user-attachments/assets/e6953eb2-0a6e-43f0-9ff1-0fffcea5ace7)
