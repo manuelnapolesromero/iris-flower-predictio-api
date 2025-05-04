@@ -4,7 +4,7 @@
 
 Este repositorio contiene el código para una API REST que utiliza modelos de Machine Learning preentrenados para predecir la especie de una flor de iris basándose en sus cuatro características: largo y ancho del sépalo, y largo y ancho del pétalo.
 
-Se han entrenado cuatro modelos distintos: Regresión Logística, Árbol de Decisión, Máquina de Vectores de Soporte (SVM) y Bosque Aleatorio (Random Forest). Cada modelo está disponible a través de un endpoint diferente de la API.
+**Se han entrenado cuatro modelos distintos:** Regresión Logística, Árbol de Decisión, Máquina de Vectores de Soporte (SVM) y Bosque Aleatorio (Random Forest). Cada modelo está disponible a través de un endpoint diferente de la API.
 
 ## Estructura del Proyecto
 iris-flower-prediction-api/
