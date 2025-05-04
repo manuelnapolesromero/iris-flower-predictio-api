@@ -2,7 +2,7 @@
 
 # API de Predicción de la Flor de Iris con Modelos de Machine Learning
 
-Este repositorio contiene el código para una API REST que utiliza modelos de Machine Learning preentrenados para predecir la especie de una flor de iris basándose en sus cuatro características: largo y ancho del sépalo, y largo y ancho del pétalo.
+Este repositorio contiene el código para una API REST que utiliza modelos de Machine Learning preentrenados para predecir la especie de una flor de iris basándose en sus cuatro características: largo y ancho del sépalo y largo y ancho del pétalo.
 
 **Se han entrenado cuatro modelos distintos:** Regresión Logística, Árbol de Decisión, Máquina de Vectores de Soporte (SVM) y Bosque Aleatorio (Random Forest). Cada modelo está disponible a través de un endpoint diferente de la API.
 
@@ -33,9 +33,9 @@ Esta API, desarrollada utilizando el framework Flask en Python, tiene como prop�
 
 La API realiza las siguientes acciones principales:
 
-**Expone modelos de Machine Learning:** A través de diferentes rutas o "endpoints", la API permite interactuar con modelos pre-entrenados. En este caso, se han entrenado y aparentemente cargado modelos de Regresión Logística y Random Forest.
+**Expone modelos de Machine Learning:** A través de diferentes rutas o "endpoints", la API permite interactuar con modelos pre-entrenados. En este caso, se han entrenado y cargado modelos de Regresión Logística, Bosque Aleatorio, Maquinas de Soporte Vectorial y Arból de decisión.
 
-**Recibe solicitudes de predicción:** Los usuarios o aplicaciones pueden enviar datos a la API a través de peticiones HTTP POST a endpoints específicos (como /predict/logistic y /predict/randomforest).
+**Recibe solicitudes de predicción:** Los usuarios o aplicaciones pueden enviar datos a la API a través de peticiones HTTP POST a endpoints específicos (como /predict/logistic, /predict/randomforest, /predict/svm, /predict/tree_decision).
 
 **Procesa los datos de entrada:** La API espera recibir datos en un formato específico (aunque no se detalla en la información proporcionada) para poder alimentar los modelos de Machine Learning.
 
