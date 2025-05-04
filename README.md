@@ -1,60 +1,119 @@
-# iris-flower-prediction-api
+# machine_learning_api
 
-# API de Predicción de la Flor de Iris con Modelos de Machine Learning
+Una API sencilla para la clasificación de flores Iris utilizando modelos de Machine Learning (Regresión Logística, SVM, Árbol de Decisión y Random Forest) desarrollada con Flask.
 
-Este repositorio contiene el código para una API REST que utiliza modelos de Machine Learning preentrenados para predecir la especie de una flor de iris basándose en sus cuatro características: largo y ancho del sépalo y largo y ancho del pétalo.
+## Descripción General
 
-**Se han entrenado cuatro modelos distintos:** Regresión Logística, Árbol de Decisión, Máquina de Vectores de Soporte (SVM) y Bosque Aleatorio (Random Forest). Cada modelo está disponible a través de un endpoint diferente de la API.
+Esta API proporciona una interfaz para interactuar con modelos de Machine Learning pre-entrenados para clasificar flores del dataset Iris. Permite enviar las características de una flor (longitud y ancho del sépalo y del pétalo) y recibir una predicción sobre su especie.
 
-## Estructura del Proyecto
-iris-flower-prediction-api/
+## Requisitos
 
-├── models/
+Antes de comenzar, asegúrate de tener instalado lo siguiente en tu sistema:
 
-│   ├── model_logistic.h5
+* **Python 3.x**
+* **pip** (el gestor de paquetes de Python)
 
-│   ├── model_forest.h5
+## Instalación
 
-│   ├── model_svm.h5
+Sigue estos pasos para configurar el entorno y ejecutar la API:
 
-│   └── model_tree.h5
+1.  **Clonar el repositorio (si aún no lo has hecho):**
 
-├── app.py          # Código principal de la API Flask
+    ```bash
+    git clone <URL_DEL_REPOSITORIO>
+    cd machine_learning_api
+    ```
 
-├── iris_models.py  # Script para entrenar y guardar los modelos
+2.  **Crear un entorno virtual:**
 
-└── requirements.txt # Lista de dependencias de Python
+    ```bash
+    python3 -m venv flask
+    ```
 
-## Descripción General de la API:
+3.  **Activar el entorno virtual:**
 
-Esta API, desarrollada utilizando el framework Flask en Python, tiene como propósito fundamental ofrecer funcionalidades de predicción basadas en modelos de Machine Learning. En el ejemplo proporcionado, la API se centra en la clasificación de datos del dataset Iris.
+    * **En Linux/macOS:**
+        ```bash
+        source flask/bin/activate
+        ```
+    * **En Windows:**
+        ```bash
+        .\flask\Scripts\activate
+        ```
 
-## ¿Qué hace?
+4.  **Instalar las dependencias:**
 
-La API realiza las siguientes acciones principales:
+    ```bash
+    pip3 install -r requirements.txt
+    ```
 
-**Expone modelos de Machine Learning:** A través de diferentes rutas o "endpoints", la API permite interactuar con modelos pre-entrenados. En este caso, se han entrenado y cargado modelos de Regresión Logística, Bosque Aleatorio, Maquinas de Soporte Vectorial y Arból de decisión.
+## Uso
 
-**Recibe solicitudes de predicción:** Los usuarios o aplicaciones pueden enviar datos a la API a través de peticiones HTTP POST a endpoints específicos (como /predict/logistic, /predict/randomforest, /predict/svm, /predict/tree_decision).
+### Activar el Entorno Virtual
 
-**Procesa los datos de entrada:** La API espera recibir datos en un formato específico (aunque no se detalla en la información proporcionada) para poder alimentar los modelos de Machine Learning.
+Si has cerrado la terminal o el entorno virtual no está activo, asegúrate de activarlo antes de continuar:
 
-**Realiza predicciones:** Utilizando los modelos cargados, la API procesa los datos de entrada y genera una predicción sobre la clase a la que pertenece la muestra.
+* **Chromebook:** `source flask/bin/activate`
 
-**Devuelve resultados:** La API responde a las solicitudes con los resultados de la predicción, probablemente en un formato como JSON, para que la aplicación cliente pueda interpretarlos.
+Deberías ver `(flask)` al principio de tu línea de comandos, indicando que el entorno virtual está activo.
 
-**Sirve una interfaz web básica (opcional):** La presencia de una petición GET a la ruta / sugiere que la API podría ofrecer una página web básica, aunque su funcionalidad específica no se describe.
+### Ejecutar la API de Flask
 
-## ¿Cuál es su propósito?
+Una vez que el entorno virtual esté activo y las dependencias instaladas, ejecuta la aplicación Flask con el siguiente comando:
 
-El propósito principal de esta API es democratizar el acceso a los modelos de Machine Learning entrenados. En lugar de requerir que otras aplicaciones o usuarios implementen los modelos directamente, la API actúa como un intermediario, permitiendo:
+```bash
+python3 app.py
 
-**Reutilización de modelos:** Los modelos entrenados pueden ser utilizados por múltiples aplicaciones sin necesidad de re-entrenamiento.
+La API se iniciará y mostrará información sobre el servidor en tu terminal, incluyendo la dirección en la que está corriendo (normalmente http://127.0.0.1:5001).
+Realizar Peticiones de Predicción
+Puedes interactuar con la API enviando peticiones HTTP POST a los endpoints de predicción con datos en formato JSON. 
+Ejemplo con Postman
+Abre la aplicación Postman.
 
-**Abstracción de la complejidad:** Las aplicaciones cliente no necesitan conocer los detalles internos de los modelos de Machine Learning ni las bibliotecas utilizadas para su implementación. Solo necesitan saber cómo comunicarse con la API.
 
-**Integración sencilla:** Permite integrar capacidades de Machine Learning en diversas aplicaciones web o sistemas a través de solicitudes HTTP estándar.
+Crea una nueva solicitud.
 
-**Escalabilidad:** Al desacoplar los modelos de las aplicaciones cliente, se facilita la escalabilidad y el mantenimiento de la infraestructura de Machine Learning.
 
-**Nota:** Esta API de Machine Learning para la clasificación del dataset Iris busca ofrecer una forma sencilla y eficiente de obtener predicciones a partir de modelos pre-entrenados a través de una interfaz web.
+Selecciona el método POST.
+
+
+Ingresa la URL del endpoint (por ejemplo, http://127.0.0.1:5001/predict/logistic).
+
+
+Ve a la pestaña "Headers" y añade una clave Content-Type con el valor application/json.
+
+
+Ve a la pestaña "Body", selecciona la opción "raw" y elige el formato "JSON".
+
+
+Ingresa los datos JSON en el cuerpo:
+
+ JSON
+{
+    "sepal_length": 6.3,
+    "sepal_width": 2.9,
+    "petal_length": 5.6,
+    "petal_width": 1.8
+}
+Haz clic en "Send". La respuesta de la API se mostrará en la sección de resultados.
+
+
+Endpoints de la API
+Actualmente, la API ofrece los siguientes endpoints para la predicción:
+/predict/logistic: Utiliza el modelo de Regresión Logística para predecir la especie de la flor.
+/predict/svm: Utiliza el modelo SVM para la predicción.
+/predict/decisiontree: Utiliza el modelo de Árbol de Decisión para la predicción.
+/predict/randomforest: Utiliza el modelo de Random Forest para predecir la especie de la flor.
+Todos los endpoints de predicción esperan una solicitud POST con un cuerpo JSON que contenga las siguientes claves:
+sepal_length (float)
+sepal_width (float)
+petal_length (float)
+petal_width (float)
+Modelos Disponibles
+Esta API actualmente soporta los siguientes modelos de Machine Learning para la clasificación de flores Iris:
+Regresión Logística
+SVM
+Árbol de Decisión
+Random Forest
+Los modelos fueron pre-entrenados y están listos para realizar predicciones.
+
