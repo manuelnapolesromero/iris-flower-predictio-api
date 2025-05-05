@@ -63,11 +63,11 @@ python3 app.py
 
 La API se iniciará y mostrará información sobre el servidor en tu terminal, incluyendo la dirección en la que está corriendo (normalmente http://127.0.0.1:5001).
 
-## Realizar Peticiones de Predicción
+### Realizar Peticiones de Predicción
 
 Puedes interactuar con la API enviando peticiones HTTP POST a los endpoints de predicción con datos en formato JSON. 
 
-# Ejemplo con Postman
+## Ejemplo con Postman
 Abre la aplicación Postman.
 
 
@@ -99,17 +99,17 @@ Haz clic en "Send". La respuesta de la API se mostrará en la sección de result
 
 
 ## Endpoints de la API
-Actualmente, la API ofrece los siguientes endpoints para la predicción:
+### Actualmente, la API ofrece los siguientes endpoints para la predicción:
 
-**/predict/logistic:** Utiliza el modelo de Regresión Logística para predecir la especie de la flor.
+**/predict/logistic**
 
-**/predict/svm:** Utiliza el modelo SVM para la predicción.
+**/predict/svm**
 
-**/predict/decisiontree:** Utiliza el modelo de Árbol de Decisión para la predicción.
+**/predict/decisiontree** 
 
-**/predict/randomforest:** Utiliza el modelo de Random Forest para predecir la especie de la flor.
+**/predict/randomforest**
 
-**Todos los endpoints de predicción esperan una solicitud POST con un cuerpo JSON que contenga las siguientes claves:**
+### Todos los endpoints de predicción esperan una solicitud POST con un cuerpo JSON que contenga las siguientes claves:
 
 sepal_length (float)
 
@@ -120,7 +120,8 @@ petal_length (float)
 petal_width (float)
 
 ## Modelos Disponibles
-**Esta API actualmente soporta los siguientes modelos de Machine Learning para la clasificación de flores Iris:**
+
+### Esta API actualmente soporta los siguientes modelos de Machine Learning para la clasificación de flores Iris:
 
 Regresión Logística
 
