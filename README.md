@@ -1,6 +1,6 @@
 # machine_learning_api
 
-Una API sencilla para la clasificación de flores Iris utilizando modelos de Machine Learning (Regresión Logística, SVM, Árbol de Decisión y Random Forest) desarrollada con Flask.
+Una API sencilla para la clasificación de flores Iris utilizando modelos de Machine Learning (Regresión Logística, SVM, Árbol de Decisión y Random Forest) desarrollada con Flask en Chromebook.
 
 ## Descripción General
 
@@ -32,13 +32,9 @@ Sigue estos pasos para configurar el entorno y ejecutar la API:
 
 3.  **Activar el entorno virtual:**
 
-    * **En Linux/macOS:**
+    * **En Chromebook:**
         ```bash
         source flask/bin/activate
-        ```
-    * **En Windows:**
-        ```bash
-        .\flask\Scripts\activate
         ```
 
 4.  **Instalar las dependencias:**
@@ -53,7 +49,7 @@ Sigue estos pasos para configurar el entorno y ejecutar la API:
 
 Si has cerrado la terminal o el entorno virtual no está activo, asegúrate de activarlo antes de continuar:
 
-* **Chromebook:** `source flask/bin/activate`
+* **En Chromebook:** `source flask/bin/activate`
 
 Deberías ver `(flask)` al principio de tu línea de comandos, indicando que el entorno virtual está activo.
 
@@ -63,11 +59,15 @@ Una vez que el entorno virtual esté activo y las dependencias instaladas, ejecu
 
 ```bash
 python3 app.py
+```
 
 La API se iniciará y mostrará información sobre el servidor en tu terminal, incluyendo la dirección en la que está corriendo (normalmente http://127.0.0.1:5001).
-Realizar Peticiones de Predicción
+
+## Realizar Peticiones de Predicción
+
 Puedes interactuar con la API enviando peticiones HTTP POST a los endpoints de predicción con datos en formato JSON. 
-Ejemplo con Postman
+
+# Ejemplo con Postman
 Abre la aplicación Postman.
 
 
@@ -77,7 +77,7 @@ Crea una nueva solicitud.
 Selecciona el método POST.
 
 
-Ingresa la URL del endpoint (por ejemplo, http://127.0.0.1:5001/predict/logistic).
+Ingresa la URL del endpoint (por ejemplo, http://127.0.0.1:5001).
 
 
 Ve a la pestaña "Headers" y añade una clave Content-Type con el valor application/json.
@@ -98,22 +98,38 @@ Ingresa los datos JSON en el cuerpo:
 Haz clic en "Send". La respuesta de la API se mostrará en la sección de resultados.
 
 
-Endpoints de la API
+## Endpoints de la API
 Actualmente, la API ofrece los siguientes endpoints para la predicción:
-/predict/logistic: Utiliza el modelo de Regresión Logística para predecir la especie de la flor.
-/predict/svm: Utiliza el modelo SVM para la predicción.
-/predict/decisiontree: Utiliza el modelo de Árbol de Decisión para la predicción.
-/predict/randomforest: Utiliza el modelo de Random Forest para predecir la especie de la flor.
-Todos los endpoints de predicción esperan una solicitud POST con un cuerpo JSON que contenga las siguientes claves:
+
+**/predict/logistic:** Utiliza el modelo de Regresión Logística para predecir la especie de la flor.
+
+**/predict/svm:** Utiliza el modelo SVM para la predicción.
+
+**/predict/decisiontree:** Utiliza el modelo de Árbol de Decisión para la predicción.
+
+**/predict/randomforest:** Utiliza el modelo de Random Forest para predecir la especie de la flor.
+
+**Todos los endpoints de predicción esperan una solicitud POST con un cuerpo JSON que contenga las siguientes claves:**
+
 sepal_length (float)
+
 sepal_width (float)
+
 petal_length (float)
+
 petal_width (float)
-Modelos Disponibles
-Esta API actualmente soporta los siguientes modelos de Machine Learning para la clasificación de flores Iris:
+
+## Modelos Disponibles
+**Esta API actualmente soporta los siguientes modelos de Machine Learning para la clasificación de flores Iris:**
+
 Regresión Logística
+
 SVM
+
 Árbol de Decisión
+
 Random Forest
-Los modelos fueron pre-entrenados y están listos para realizar predicciones.
+
+**Nota:** Los modelos fueron pre-entrenados y están listos para realizar predicciones.
+
 
